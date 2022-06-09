@@ -1,0 +1,8 @@
+{
+  "name": "bitcoin-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com-tsmith123:tsmith123/bitcoin-api.git",
+  "author": "<tomdsmith1@gmail.com>",
+  "license": "MIT"
+}
