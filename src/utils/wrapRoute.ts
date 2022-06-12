@@ -1,15 +1,16 @@
-import { Request, Response, NextFunction } from 'express';
+import { Request, Response, RequestHandler, NextFunction } from 'express';
+import { Context } from '@types';
 
 interface RequestCustom extends Request {
-  context: string;
+  context: Context;
 }
 
-const wrapRoute = (routeHandler, context) => (req: RequestCustom, res: Response, next: NextFunction) => {
+const wrapRoute = (context: Context, handler: RequestHandler) => (req: RequestCustom, res: Response, next: NextFunction) => {
   try {
     req.context = context;
-    return routeHandler.call(this, req, res, next);
+    return handler.call(this, req, res, next);
   } catch (e) {
-    next(e);
+    throw new Error(e);
   }
 };
 

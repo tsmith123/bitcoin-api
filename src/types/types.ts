@@ -1,3 +1,5 @@
+import WebSocket from 'ws';
+
 export interface BtcdConfig {
   uri: string;
   username: string;
@@ -6,6 +8,9 @@ export interface BtcdConfig {
 }
 
 export interface BtcdClient {
+  config: BtcdConfig;
+  websocket: WebSocket;
+  callCounter: number;
   _tryConnect(): void;
   // Needs other class methods adding here
 }

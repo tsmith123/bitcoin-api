@@ -3,7 +3,6 @@ import createContext from './createContext';
 import wrapRoute from '@utils/wrapRoute';
 
 const handler = (req, res) => {
-  console.log(req.context);
   res.send('Hello World!');
 };
 
@@ -14,7 +13,8 @@ const registerRoutes = config => {
   const context = createContext(config);
 
   // router.get('/', handler);
-  router.get('/', wrapRoute(handler, context));
+  router.get('/', wrapRoute(context, handler));
+  router.get('/test', wrapRoute(context, handler));
 
   return router;
 };
