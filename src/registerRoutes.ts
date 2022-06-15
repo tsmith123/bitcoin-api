@@ -1,10 +1,7 @@
-import express from 'express';
+import express, { Response } from 'express';
 import createContext from './createContext';
 import wrapRoute from '@utils/wrapRoute';
-
-const handler = (req, res) => {
-  res.send('Hello World!');
-};
+import { RequestContext } from '@types';
 
 const registerRoutes = config => {
   console.log('Registering routes...');
@@ -13,8 +10,12 @@ const registerRoutes = config => {
   const context = createContext(config);
 
   // router.get('/', handler);
-  router.get('/', wrapRoute(context, handler));
-  router.get('/test', wrapRoute(context, handler));
+  router.get('/', wrapRoute(context, (req: RequestContext, res: Response) => {
+    res.send('Hello World');
+  }));
+  router.get('/test', wrapRoute(context, (req: RequestContext, res: Response) => {
+    res.send('Test');
+  }));
 
   return router;
 };

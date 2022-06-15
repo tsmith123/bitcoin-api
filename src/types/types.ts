@@ -1,4 +1,5 @@
 import WebSocket from 'ws';
+import { Request } from 'express';
 
 export interface BtcdConfig {
   uri: string;
@@ -17,4 +18,8 @@ export interface BtcdClient {
 
 export interface Context {
   btcd: BtcdClient;
+}
+
+export interface RequestContext extends Request {
+  context: Context;
 }
