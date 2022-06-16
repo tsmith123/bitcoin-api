@@ -1,5 +1,5 @@
 {
-  "name": "nodefly-api",
+  "name": "nodana-api",
   "version": "1.0.0",
   "main": "dist/index.js",
   "engines": {
@@ -9,6 +9,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "tsc-watch --noClear -p ./tsconfig.json --onSuccess \"node ./dist/index.js\"",
+    "start": "tsc && node dist/index.js",
     "lint": "eslint . --ext .ts",
     "test": "mocha './test/**/*.test.ts'"
   },
