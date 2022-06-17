@@ -5,3 +5,5 @@ COPY package*.json ./
 USER node
 RUN yarn
 COPY --chown=node:node . .
+EXPOSE 3000
+CMD [ "yarn", "run", "start" ]
