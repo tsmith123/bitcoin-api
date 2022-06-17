@@ -1,7 +1,6 @@
 {
   "name": "nodana-api",
   "version": "1.0.0",
-  "main": "dist/index.js",
   "engines": {
     "node": "14.17.0"
   },
@@ -9,7 +8,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon",
-    "start": "tsc && node dist/index.js",
+    "start": "tsc && node dist/index",
     "lint": "eslint . --ext .ts",
     "test": "mocha './test/**/*.test.ts'"
   },
@@ -34,7 +33,6 @@
     "typescript": "^4.7.3"
   },
   "_moduleAliases": {
-    "@controllers": "./src/controllers",
     "@types": "./src/types",
     "@utils": "./src/utils"
   }
