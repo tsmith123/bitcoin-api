@@ -26,7 +26,7 @@ export default class Client implements BtcdClient {
     try {
       this._connect();
     } catch (e) {
-      // this.logger.error(...)
+      // this.logger.errorx(...)
     }
   }
 

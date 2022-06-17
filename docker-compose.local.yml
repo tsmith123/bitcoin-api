@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  api:
+    command: yarn run dev
+    container_name: nodana-api-dev
+    env_file: .env
+    environment:
+      - ACTIVE_ENV=development
+      - APP_NAME=$APP_NAME
+      - PORT=$PORT
+    restart: always
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/home/node/nodana
+
+# docker-compose -f docker-compose.yml -f docker-compose.local.yml up -d

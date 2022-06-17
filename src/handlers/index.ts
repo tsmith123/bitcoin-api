@@ -6,5 +6,5 @@ export const getRoot = (req: RequestContext, res: Response) => {
 };
 
 export const getTest = (req: RequestContext, res: Response) => {
-  res.send('Testing');
+  res.send('Test');
 };
