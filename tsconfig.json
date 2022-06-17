@@ -8,6 +8,9 @@
     "outDir": "./dist",
     "baseUrl": "./src",
     "paths": {
+      "@controllers": [
+        "controllers"
+      ],
       "@types": [
         "types"
       ],
